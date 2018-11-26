@@ -8,13 +8,14 @@ The first experiment we will carry out will be adapting the code from lab06 rein
 
 - Critical part: Adapting the policy gradient update!!!!
 
+### Experiment 2: Notebook Exp2 --> cartpole env
+The second experiment will consist on adding a replay memory to the agent, and sample data from it to train.
 
-
-### Experiment 2: Notebook Exp2 --> lunar lander env
-The second experiment will consist on adapting the agent developed before in a more challenging environment
+### Experiment 3: Notebook Exp3 --> lunar lander env
+The third experiment will consist on adapting the agent developed before in a more challenging environment
 Bigger observation space + Bigger action space (also discrete)
 
 
-### Experiment 3: Notebook Exp3 --> cartpole env
-The third experiment will consist on adapting the agent developed before in Exp1 to work directly with the environment images instead of the observation space.
+### Experiment 4: Notebook Exp4 --> cartpole env
+The fourth experiment will consist on adapting the agent developed before in Exp1 to work directly with the environment images instead of the observation space.
 
