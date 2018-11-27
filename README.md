@@ -15,7 +15,8 @@ Blue -> No entropy
 <img src="captures/1500ep_1bs_0.001lr.png"/>
 
 - 3500 episodes with batch_size=2 and lr=0.001
-<img src="captures/3500ep_2bs_0.001lr.png"/>
+
+<img src="captures/3500ep_2bs_0.001.png"/>
 
 ### Experiment 2: Notebook Exp2 --> cartpole env
 The second experiment will consist on adding a replay memory to the agent, and sample data from it to train.
