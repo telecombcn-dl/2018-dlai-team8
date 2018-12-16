@@ -19,6 +19,8 @@ Depending on how the policy is defined classify agents as:
 ## Policy definition:
 
 ![Branching](https://github.com/telecombcn-dl/2018-dlai-team8/blob/master/docs/assets/images/stochastic.png)
+<img src="https://github.com/telecombcn-dl/2018-dlai-team8/blob/master/docs/assets/images/stochastic.png"/>
+
 
 
 
