@@ -68,11 +68,23 @@ Defining J(θ):
 
 The main idea behind reinforcement learning is the idea of the reward hypothesis. It says that all goals can be descibed by the maximization of the expected cumulative reward:
 
+- We can define the policy score as the expected reward of following π for every possible state:
+
 ![Octocat](assets/images/score_function.png)
 
+We know that policy parameters change how actions are chosen, and as a consequence, what rewards we get and which states we will see and how often.
+On the other hand, the impact of the policy in the state distribution is not that obvious, moreover the environment is unknown
 
 
+The solution will be to use the Policy Gradient Theorem. This provides an analytic expression for the gradient ∇ of J(θ) (performance) with respect to policy θ that does not involve the differentiation of the state distribution.
 
+Differentiable score policy function:
+
+![Octocat](assets/images/differentiable_score.png)
+
+Now we can compute the compute the gradient as:
+
+![Octocat](assets/images/update.png)
 
 
 
