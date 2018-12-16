@@ -36,6 +36,7 @@ layout: default
     called agent. This agent will act on an environment, and this environment will 
     provide him state observations and rewards. This approach is modeled mathematically
     as a Markov Decision Process as figure below.
+    
 ![Octocat](assets/images/intromdp.png)
 
 ##  OpenAI Gym CartPole
