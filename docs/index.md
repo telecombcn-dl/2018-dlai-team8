@@ -7,9 +7,25 @@ layout: default
 
 bla bla bla intro
 
-# Deep Policy Gradient Agent
+# Deep Stochastic Policy Gradient Agent
 
-balblabalba
+## Deterministic vs Stochastic
+
+Depending on how the policy is defined classify agents as:
+* Deterministic: Outputs the action the agent will execute for a given state. Value-based agents such as DQN are exmples of deterministic agents.
+
+* Stochastic: Outputs a probability distribution over actions. The action executed action is samples from this distribution
+
+## Policy definition:
+
+![Branching](https://github.com/telecombcn-dl/2018-dlai-team8/blob/master/docs/assets/images/stochastic.png)
+
+
+
+
+
+
+
 
 
 # DQN Agent
