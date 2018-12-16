@@ -14,7 +14,7 @@ In these cases a neural network, that is a universal function approximator, can 
 
 The deep network used by the agent to estimate the Q* function is composed by three convolutional layers with batch normalization and a linear layer with categorical output that represents the probability of each action.
 
-The convolutional layers have size 16, 32, 32, while the linear layer have 448 units. We use the *Rectified Linear Unit* as activation function and the RMSprop optimizer.
+The convolutional layers have size 16, 32, 32, while the linear layer have 448 units. We use the *Rectified Linear Unit* as activation function, the *Huber* loss function and the RMSprop optimizer.
 
 The network is implemented in the `DQN` class. This inherit from the `Module` class of Torch.
 
@@ -44,7 +44,7 @@ It contains methods to extract the state from the environment, to plot the durat
 
 It can be configured using a `Config` object that specify learning rate, batch size, a seed (so that the behavior is deterministic between runs), and a preinizialized environment.
 
-At the initialization it will create the DQNs and a replay memory. The Agent will use two 
+At the initialization it will create the DQNs and a replay memory. The Agent will use two DQNs, one is optimized after every step, while the other is updated less often.
 
 ### Action selection
 The action is selecred according to an ϵ-greedy policy. The agent will use the model to select the action, but sometimes it will take a random choise. The probability to chose at random will decrese exponentially.
@@ -56,4 +56,12 @@ The training is implemented in two methods: `train(num_epochs)` will run the tra
 * save the transition in the memory
 * optimize the model.
 
-The optimization of the model is performed in a separated function: `optimize_model()`. 
+The optimization of the model is performed in a separated function: `optimize_model()`. It will select a batch of memories excluding the ones that bring to the end of the match.
+
+Then, it computes, using the current weights, the value of the Q function for the considered couples `(state, action)`. Using the next state, it is computed the value V for all of them; a value of 0 is assigned if next state is a game over.
+
+The value V is computed using the `target_net`: this helps to improve stability as its weights are updated less often with respect to the policy_net.
+
+At this point, the expected value of the Q funciton is computed and the loss.
+
+Applying the backpropagation algorithm, the parameters of the policy net are updated and the optimization step ends.
