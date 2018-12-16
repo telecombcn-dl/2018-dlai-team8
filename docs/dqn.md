@@ -14,7 +14,7 @@ In these cases a neural network, that is a universal function approximator, can 
 
 The deep network used by the agent to estimate the Q* function is composed by three convolutional layers with batch normalization and a linear layer with categorical output that represents the probability of each action.
 
-The convolutional layers have size 16, 32, 32, while the linear layer have 448 units. We use the *Rectified Linear Unit* as activation function, the *Huber* loss function and the RMSprop optimizer.
+The convolutional layers have size 16, 32, 32, while the linear layer have 448 units. We use the *Rectified Linear Unit* as activation function, the *Huber* loss function and the *RMSprop* optimizer.
 
 The network is implemented in the `DQN` class. This inherit from the `Module` class of Torch.
 
@@ -47,7 +47,7 @@ It can be configured using a `Config` object that specify learning rate, batch s
 At the initialization it will create the DQNs and a replay memory. The Agent will use two DQNs, one is optimized after every step, while the other is updated less often.
 
 ### Action selection
-The action is selecred according to an ϵ-greedy policy. The agent will use the model to select the action, but sometimes it will take a random choise. The probability to chose at random will decrese exponentially.
+The action is selected according to an ϵ-greedy policy. The agent will use the model to select the action, but sometimes it will take a random choise. The probability to chose at random will decrese exponentially.
 
 ### Training
 The training is implemented in two methods: `train(num_epochs)` will run the training loop for the specified number of epochs. For each iteration, it will reset the environment and the state; than it will start playing. For every tik, the Agent will:
