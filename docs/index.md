@@ -14,12 +14,38 @@ bla bla bla intro
 Depending on how the policy is defined classify agents as:
 * Deterministic: Outputs the action the agent will execute for a given state. Value-based agents such as DQN are exmples of deterministic agents.
 
-* Stochastic: Outputs a probability distribution over actions. The action executed action is samples from this distribution
+* Stochastic: Outputs a probability distribution over actions. The action executed is sampled from this distribution
 
 ## Policy definition:
 We wont our policy to learn the probability distribution for a given state, this will be achieved using a fully connected neural network
 
+What to learn?
 ![Octocat](assets/images/stochastic.png)
+
+Who will learn it? Our model
+
+
+```python
+// Pytorch policy definition
+class PolicyNN(nn.Module):
+  def __init__(self,obs_dim=4, num_actions=2):
+    super(PolicyNN, self).__init__()
+    self.fc1 = nn.Sequential(
+      nn.Linear(obs_dim, 16),
+      nn.Tanh())
+    self.fc2 = nn.Sequential(
+      nn.Linear(16, 16),
+      nn.Tanh())
+    self.fc3 =  nn.Linear(16, num_actions)
+
+  def forward(self, x):
+    x = self.fc1(x)
+    x = self.fc2(x)
+    logprobs = self.fc3(x)
+    return F.softmax(logprobs)
+}
+```
+
 
 That's perfect, but how do we know how good is our policy? 
 
@@ -27,6 +53,8 @@ As it is an optimization problem we need to find a mesure to minimize/maximize a
 
 
 ## Policy Optimization:
+Basic definitions:
+
 
 ![Octocat](assets/images/update_alg.png)
 
