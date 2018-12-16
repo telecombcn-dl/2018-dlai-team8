@@ -26,7 +26,7 @@ Who will learn it? Our model
 
 
 ```python
-// Pytorch policy definition
+# Pytorch policy definition
 class PolicyNN(nn.Module):
   def __init__(self,obs_dim=4, num_actions=2):
     super(PolicyNN, self).__init__()
@@ -58,8 +58,15 @@ Basic definitions:
 
 ![Octocat](assets/images/update_alg.png)
 
+How to train the policy:
 
-Score Function J(θ) (θ--> Parameters)
+1. Measure the quality of a π (policy) that has parameters θ with a policy score function J(θ) 
+2. Use policy gradient ascent to find the best parameter θ that improves our π
+    
+
+Defining J(θ):
+
+The main idea behind reinforcement learning is the idea of the reward hypothesis. It says that all goals can be descibed by the maximization of the expected cumulative reward:
 
 ![Octocat](assets/images/score_function.png)
 
