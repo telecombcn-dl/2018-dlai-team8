@@ -12,7 +12,6 @@ We wont our policy to learn the probability distribution for a given state, this
 
 What to learn?
 ![Octocat](assets/images/stochastic.png)
-
 Who will learn it? Our model
 
 
