@@ -2,25 +2,24 @@
 layout: default
 ---
 
-Text can be **bold**, _italic_, or ~~strikethrough~~.
 
-[Link to another page](./another-page.html).
+# Introduction to Reinforcement Learning
 
-There should be whitespace between paragraphs.
+bla bla bla intro
 
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
+# Deep Policy Gradient Agent
 
-# Header 1
+balblabalba
 
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
 
-## Header 2
+# DQN Agent
 
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
+balblabalba
 
-### Header 3
+
+# Conclusions
+
+balblabalba
 
 ```js
 // Javascript code with syntax highlighting.
