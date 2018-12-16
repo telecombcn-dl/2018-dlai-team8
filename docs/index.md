@@ -17,9 +17,27 @@ Depending on how the policy is defined classify agents as:
 * Stochastic: Outputs a probability distribution over actions. The action executed action is samples from this distribution
 
 ## Policy definition:
+We wont our policy to learn the probability distribution for a given state, this will be achieved using a fully connected neural network
 
-![Branching](assets/images/stochastic.png)
-<img src="assets/images/stochastic.png"/>
+![Octocat](assets/images/stochastic.png)
+
+That's perfect, but how do we know how good is our policy? 
+
+As it is an optimization problem we need to find a mesure to minimize/maximize and update our policy accordingly.
+
+
+## Policy Optimization:
+
+![Octocat](assets/images/update_alg.png)
+
+
+Score Function J(θ) (θ--> Parameters)
+
+![Octocat](assets/images/score_function.png)
+
+
+
+
 
 
 
