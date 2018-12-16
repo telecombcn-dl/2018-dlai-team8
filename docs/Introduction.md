@@ -22,7 +22,7 @@
     act on an environment, and this environment will provide him state observations and rewards. This approach is 
     modeled mathematically as a Markov Decision Process as figure below.
 
-![Octocat](assets/images/intromdp.png)
+<center>![Octocat](assets/images/intromdp.png)</center>
 
 ##  OpenAI Gym CartPole
 
@@ -32,7 +32,7 @@
     or move it to the left to balance a pole on top of this cart. The pole is free to fall, but the problem is 
     simplified to just one dimension this way the cart moves and the pole can fall in one dimension: right or left.
     
-![Octocat](assets/images/cartpole.png)    
+<center>![Octocat](assets/images/cartpole.png)</center>    
     
     OpenAI modeled this Cart Pole problem in an environment “CartPole-v0” that is part of gym toolkit. OpenAI 
     is a company who is ahead of the Reinforcement Learning field making the Artificial Intelligence accessible to 
