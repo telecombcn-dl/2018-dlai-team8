@@ -25,9 +25,8 @@ Understanding the impact of entropy on policy optimization, Zafarali Ahmed, Nico
 After implementing entropy normalization with a constant value we can see the following results:
 Entropy factor=0.01
 ![Octocat](assets/images/entropy_vs_no_entropy.png)
-By encouraging the exploring we can see that the entropic agent learns faster, however, as we do not decrease the entropy factor it ends up with a poorer performance.
-the
-When training policy gradient agents we should take entropy normalization and the same way we use learning rate decay, decay also the entropy factor .
+By encouraging the exploring we can see that the entropic agent learns faster and also finds a more opotimal solution than the version without entropy normalization.
+When training policy gradient agents we should take entropy normalization as another parameter which we can leave constant or try expontential decays on the entropy factor.
 
 
 ## RGB Image as current state
