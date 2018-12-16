@@ -15,7 +15,7 @@ layout: default
     Sutton, R. S. brings a good definition of reinforcement learning “… Reinforcement learning is learning what to do—how to map situations to actions—so as to maximize a numerical reward signal. The learner is not told which actions to take, but instead must discover which actions yield the most reward by trying them...”
     In this context, the subject which will learn how to map situations to actions is called agent. This agent will act on an environment, and this environment will provide him state observations and rewards. This approach is modeled mathematically as a Markov Decision Process as figure 1.
 
-
+![Octocat](assets/images/fig1.png)
 
  ##  Reinforcement Learning – OpenAI Gym
 
@@ -23,7 +23,7 @@ layout: default
     OpenAI modeled this Cart Pole problem in an environment “CartPole-v0” that is part of gym toolkit.  OpenAI is a company who is ahead of the Reinforcement Learning field making the Artificial Intelligence accessible to everyone and creating through Gym toolkit the metrics and ways to compare the efficiency of learning algorithms once their performance is not comparing the same way as the ones who deal with CNN- Convolutional neuronal networks using images databases. They design environments in Gym to work with control problems,  games, robotics and automation problems and OpenAI controls their versions. You can train an agent in a built environment or design a new environment based on their models. We choose to use CartPole-v0 to compare our solution with the Victor Campos solution.
     The CartPole-v0 is an environment created by Sutton, Barto & Anderson which has as Set of possible actions a discrete variable who can have the value 0 standing for the move to left and 1 for the move to the right. Moreover, a set of environments observations which are the way our agent see the environment, and we call it states. It is a vector of 4 float values that stores in this order: the position of the cart, the velocity of the cart, the angle the pole is making with the normal direction (vertical) and the velocity of the pole edge. The environment simulates the physics of the problem through a Euler kinematic integrator and gives the agent the reward of one unit per step if the pole angle is not superior to 12º and the cart position, its center, is not reaching the edge of the screen (+/-2.4). Every time these conditions have not reached the environment finishes this temporal simulation, which is called episode, not rewarding the agent for this last step. If the agent chooses the correct action successfully balancing the pole in this environment for 200 consecutive time units, then the episode is done too. To  Solve the training of an agent in gym CartPole-v0 environment the average reward should be greater or equal to 195 over the last 100 trials.
 
-
+![Octocat](assets/images/fig2.png)
 
 ## The Project proposal
 
