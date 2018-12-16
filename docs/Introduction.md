@@ -34,14 +34,14 @@
     
 ![Octocat](assets/images/cartpole.png)    
     
-    OpenAI modeled this Cart Pole problem in an environment “CartPole-v0” that is part of gym toolkit.  OpenAI is a
-    company who is ahead of the Reinforcement Learning field making the Artificial Intelligence accessible to 
+    OpenAI modeled this Cart Pole problem in an environment “CartPole-v0” that is part of gym toolkit. OpenAI 
+    is a company who is ahead of the Reinforcement Learning field making the Artificial Intelligence accessible to 
     everyone and creating through Gym toolkit the metrics and ways to compare the efficiency of learning algorithms
     once their performance is not comparing the same way as the ones who deal with CNN- Convolutional neuronal 
-    networks using images databases. They design environments in Gym to work with control problems,  games, 
+    networks using images databases. They design environments in Gym to work with control problems, games, 
     robotics and automation problems and OpenAI controls their versions. You can train an agent in a built 
-    environment or design a new environment based on their models. We choose to use CartPole-v0 to compare our solution
-    with the Victor Campos solution.
+    environment or design a new environment based on their models. We choose to use CartPole-v0 to compare our
+    solution with the Victor Campos solution.
 
 ## CartPole Environment
 
