@@ -38,10 +38,10 @@
     company who is ahead of the Reinforcement Learning field making the Artificial Intelligence accessible to 
     everyone and creating through Gym toolkit the metrics and ways to compare the efficiency of learning algorithms
     once their performance is not comparing the same way as the ones who deal with CNN- Convolutional neuronal 
-    networks using images databases. They design environments in Gym to work with control problems,  games, robotics
-    and automation problems and OpenAI controls their versions. You can train an agent in a built environment or design
-    a new environment based on their models. We choose to use CartPole-v0 to compare our solution with the Victor 
-    Campos solution.
+    networks using images databases. They design environments in Gym to work with control problems,  games, 
+    robotics and automation problems and OpenAI controls their versions. You can train an agent in a built 
+    environment or design a new environment based on their models. We choose to use CartPole-v0 to compare our solution
+    with the Victor Campos solution.
 
 ## CartPole Environment
 
@@ -50,18 +50,18 @@
     Moreover, a set of environments observations which are the way our agent see the environment, and we call it
     states. It is a vector of 4 float values that stores in this order: the position of the cart, the velocity of
     the cart, the angle the pole is making with the normal direction (vertical) and the velocity of the pole edge.
-    The environment simulates the physics of the problem through a Euler kinematic integrator and gives the agent the
-    reward of one unit per step if the pole angle is not superior to 12º and the cart position, its center, is not 
-    reaching the edge of the screen (+/-2.4). Every time these conditions have not reached the environment finishes 
-    this temporal simulation, which is called episode, not rewarding the agent for this last step. If the agent chooses
-    the correct action successfully balancing the pole in this environment for 200 consecutive time units, then the 
-    episode is done too. To  Solve the training of an agent in gym CartPole-v0 environment the average reward should be
-    greater or equal to 195 over the last 100 trials.
+    The environment simulates the physics of the problem through a Euler kinematic integrator and gives the 
+    agent the reward of one unit per step if the pole angle is not superior to 12º and the cart position, its center,
+    is not reaching the edge of the screen (+/-2.4). Every time these conditions have not reached the environment
+    finishes this temporal simulation, which is called episode, not rewarding the agent for this last step. If the 
+    agent chooses the correct action successfully balancing the pole in this environment for 200 consecutive time 
+    units, then the episode is done too. To  Solve the training of an agent in gym CartPole-v0 environment the 
+    average reward should be greater or equal to 195 over the last 100 trials.
 
 ## The Project proposal
 
-    We decided to start from Victor Campos solution design different solutions wrote in Pytorch, who tries to solve 
-    the cart pole problem using DQN and Policy Gradient using images from gym environment as input instead of the 
-    observation float vector.
+    We decided to start from Victor Campos solution design different solutions wrote in Pytorch, who tries to 
+    solve the cart pole problem using DQN and Policy Gradient using images from gym environment as input instead 
+    of the observation float vector.
     The respective codes below shows the Policy concept, the Deep Q-Network and the tradeoff between exploration 
     and exploitation.
