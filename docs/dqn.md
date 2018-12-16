@@ -19,6 +19,15 @@ First of all, the frame of the game is cropped so that the cart takes the bigges
 
 This version of the state is a step toward an uninformed Agent, that would be able to play also different games. Still, it needs to know the cart location to be able to properly crop the image.
 
-The state is retrieved by the agent using the `get_state()` method, so that it is possible to change the type of information the DQN will process by just changing the content of this function.
+The state is retrieved by the agent using the `get_state()` method of itself, so that it is possible to change the type of information the DQN will process by just changing the content of this function.
 
 ## The Agent
+The agent is implemented by the `Agent` class.
+
+It contains methods to extract the state from the environment, to plot the duration of the episods it played, to select an action given a state and to train itself and optimize its DQN.
+
+It can be configured using a `Config` object that specify learning rate, batch size, a seed (so that the behavior is deterministic between runs), and a preinizialized environment.
+
+At the initialization it will create the DQNs and a replay memory.
+
+### Action selection
