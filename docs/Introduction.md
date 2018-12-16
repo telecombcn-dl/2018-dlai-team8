@@ -21,9 +21,13 @@
     In this context, the subject which will learn how to map situations to actions is called agent. This agent will
     act on an environment, and this environment will provide him state observations and rewards. This approach is 
     modeled mathematically as a Markov Decision Process as figure below.
-
-<center> ![Octocat](assets/images/intromdp.png) </center>
-
+<div id="container">
+    ![Octocat](assets/images/intromdp.png)
+</div>
+#container {
+    vertical-align:middle;
+    max-height:100%;
+}
 ##  OpenAI Gym CartPole
 
     A laboratory example wrote by Victor Campos which we have to execute during the course gave origin to this work.
@@ -31,8 +35,13 @@
     in reinforcement learning, where an agent has only two possible actions to take, i.e. move a cart to the right
     or move it to the left to balance a pole on top of this cart. The pole is free to fall, but the problem is 
     simplified to just one dimension this way the cart moves and the pole can fall in one dimension: right or left.
-    
-<center> ![Octocat](assets/images/cartpole.png) </center>    
+<div id="container">
+    ![Octocat](assets/images/cartpole.png)
+</div>
+#container {
+    vertical-align:middle;
+    max-height:100%;
+}
     
     OpenAI modeled this Cart Pole problem in an environment “CartPole-v0” that is part of gym toolkit. OpenAI 
     is a company who is ahead of the Reinforcement Learning field making the Artificial Intelligence accessible to 
