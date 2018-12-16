@@ -40,6 +40,18 @@ Transition = namedtuple('Transition',
                         ('state', 'action', 'next_state', 'reward'))
 
 
+class Config(object):
+    """A Configuraiton object to set the paramet
+
+    """
+    def __init__(self, env, gamma, batch_size, seed=1):
+        super(Config, self).__init__()
+        self.env = env
+        self.gamma = gamma
+        self.batch_size = batch_size
+        self.seed = seed
+
+
 class ReplayMemory(object):
     def __init__(self, capacity):
         self.capacity = capacity
@@ -149,7 +161,7 @@ Strip off the edges, so that we have a square image centered on a cart
         # Resize, and add a batch dimension (BCHW)
         return resize(screen).unsqueeze(0).to(self.device)
 
-    def select_action(self, state, policy_net):
+    def select_action(self, state):
         sample = random.random()
         eps_threshold = EPS_END + (EPS_START - EPS_END) * \
             math.exp(-1. * self.steps_done / EPS_DECAY)
@@ -229,11 +241,11 @@ Strip off the edges, so that we have a square image centered on a cart
         for i_episode in range(num_episodes):
             # Initialize the environment and state
             self.env.reset()
-            self.current_screen = self.get_screen()
+            self.current_screen = self.strip(self.get_screen())
             state = self.get_state()
             for t in count():
                 # Select and perform an action
-                action = self.select_action(state, self.policy_net)
+                action = self.select_action(state)
                 _, reward, done, _ = self.env.step(action.item())
                 reward = torch.tensor([reward], device=self.device)
 
@@ -253,7 +265,6 @@ Strip off the edges, so that we have a square image centered on a cart
                 self.optimize_model()
                 if done:
                     self.episode_durations.append(t + 1)
-                    self.plot_durations()
                     break
             # Update the target network
             if i_episode % TARGET_UPDATE == 0:
@@ -263,12 +274,9 @@ Strip off the edges, so that we have a square image centered on a cart
 
 
 def main():
-    config = object()
-    config.batch_size = BATCH_SIZE
-    config.env = gym.make('CartPole-v0').unwrapped
-    config.gamma = GAMMA
-    config.seed = 1
-
+    config = Config(gym.make('CartPole-v0').unwrapped,
+                    GAMMA,
+                    BATCH_SIZE)
     print("Action space (discrete): {}".format(config.env.action_space.n))
     print("Observation space (discrete): ", config.env.observation_space)
 
@@ -276,13 +284,14 @@ def main():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     agent = Agent(config, device)
-    plt.figure()
-    plt.imshow(agent.get_screen().cpu().squeeze(0).permute(1, 2, 0).numpy(),
-               interpolation='none')
-    plt.title('Example extracted screen')
+    # plt.figure()
+    # plt.imshow(agent.get_screen().cpu().squeeze(0).permute(1, 2, 0).numpy(),
+    #            interpolation='none')
+    # plt.title('Example extracted screen')
 
     num_episodes = 3500
     agent.train(num_episodes)
+    agent.plot_durations()
     agent.env.render()
     agent.env.close()
     plt.ioff()
