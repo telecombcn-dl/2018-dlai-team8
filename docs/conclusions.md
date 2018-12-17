@@ -15,3 +15,8 @@ Due to lack of time, there were some alternatives and experiments we could not p
 - **Try different policy optimization algorithms**: like Trust-Region Policy Optimization
 - **Perform the train in a different environment**: once we overcome the Cart and pole environment using as state the RGB images, try to solve another environment like the lunar lander.
 
+# References
+
+- Enviroments: https://gym.openai.com
+- Policy gradients: https://medium.freecodecamp.org/an-introduction-to-policy-gradients-with-cartpole-and-doom-495b5ef2207f
+- https://blog.openai.com/spinning-up-in-deep-rl/

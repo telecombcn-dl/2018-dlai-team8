@@ -5,8 +5,6 @@ layout: default
 
 # Introduction to Reinforcement Learning
 
-# Reinforcement Learning
-
 ## Motivation
 
 This subject got the attention of our group since the first class we’ve heard about
