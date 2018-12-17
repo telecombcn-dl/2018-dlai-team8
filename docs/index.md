@@ -3,10 +3,8 @@ layout: default
 ---
 
 Team Members:
-- Joao Bruno Ferreira
-- Jordi Morera Trujillo
-- Gianmarco Garrisi
-- Adrian Rodriguez
+
+  Joao Bruno Ferreira, Jordi Morera Trujillo, Gianmarco Garrisi, Adrian Rodriguez
 
 
 # Introduction to Reinforcement Learning
