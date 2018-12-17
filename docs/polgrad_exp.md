@@ -25,19 +25,22 @@ Understanding the impact of entropy on policy optimization, Zafarali Ahmed, Nico
 After implementing entropy normalization with a constant value we can see the following results:
 Entropy factor=0.01
 ![Octocat](assets/images/entropy_vs_no_entropy.png)
-By encouraging the exploring we can see that the entropic agent learns faster, however, as we do not decrease the entropy factor it ends up with a poorer performance.
-the
-When training policy gradient agents we should take entropy normalization and the same way we use learning rate decay, decay also the entropy factor .
+By encouraging the exploring we can see that the entropic agent learns faster and also finds a more opotimal solution than the version without entropy normalization.
+When training policy gradient agents we should take entropy normalization as another parameter which we can leave constant or try expontential decays on the entropy factor.
 
 
 ## RGB Image as current state
-When changing the state from the environmet 4 dim feature vector to an RGB image the complexity of the problem increases exponientially. The function our network has to learn is still the same, but understanding the state becomes such a challenge for our network.
+When changing the state from the environment 4 dim feature vector to an RGB image the complexity of the problem increases exponientially. The function our network has to learn is still the same, but understanding the state becomes such a challenge for our network.
+
+On the first attempts our agent is just moving to one direction and gradients vanish in less than thousand episodes. Each experiment takes now around 1.5-2h to fulfill a 3k episodes training, it is solowing our development and we do not have enough resources to make a hyperparameters grid search.
 
 In order to work with images we will change the previous fully connected network to a CNN +FC softmax output.
 
-![Octocat](assets/images/dqn_agent_cnn_image_cpole.png)
+![Octocat](assets/images/image_agent.png)
 
 Using images as input our agent does not even get near solving the enviroment
+
+
 
 
 
