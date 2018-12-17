@@ -30,13 +30,17 @@ When training policy gradient agents we should take entropy normalization as ano
 
 
 ## RGB Image as current state
-When changing the state from the environmet 4 dim feature vector to an RGB image the complexity of the problem increases exponientially. The function our network has to learn is still the same, but understanding the state becomes such a challenge for our network.
+When changing the state from the environment 4 dim feature vector to an RGB image the complexity of the problem increases exponientially. The function our network has to learn is still the same, but understanding the state becomes such a challenge for our network.
+
+On the first attempts our agent is just moving to one direction and gradients vanish in less than thousand episodes. Each experiment takes now around 1.5-2h to fulfill a 3k episodes training, it is solowing our development and we do not have enough resources to make a hyperparameters grid search.
 
 In order to work with images we will change the previous fully connected network to a CNN +FC softmax output.
 
-![Octocat](assets/images/dqn_agent_cnn_image_cpole.png)
+![Octocat](assets/images/image_agent.png)
 
 Using images as input our agent does not even get near solving the enviroment
+
+
 
 
 
